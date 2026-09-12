@@ -71,6 +71,8 @@ html {
   color: var(--text-ivory);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body.film-dark-theme {
@@ -79,6 +81,8 @@ body.film-dark-theme {
   color: var(--text-ivory);
   line-height: 1.65;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -116,8 +120,8 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 999;
   opacity: 0.035;
@@ -2374,13 +2378,50 @@ ul {
 .form-group input,
 .form-group select,
 .form-group textarea {
-  background: #111111;
-  border: 1px solid #2e2e2e;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-ivory);
   padding: 13px 16px;
-  border-radius: 6px;
-  font-size: 0.92rem;
+  border-radius: 8px;
+  font-size: 16px; /* 16px prevents iOS/Android Chrome auto-zoom */
+  width: 100%;
+  box-sizing: border-box;
+  color-scheme: dark;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input[type="date"] {
+  min-height: 48px;
+  color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 44px;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.form-group select {
+  min-height: 48px;
+  color-scheme: dark;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
 }
 
 .form-group input:focus,
@@ -2928,57 +2969,117 @@ ul {
   }
 }
 
-/* Specific Mobile 390px Polish (iPhone 14/15/16 standard viewport) */
-@media (max-width: 576px) {
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE SYSTEM (Mobile-First Polish - Max 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
   :root {
-    --header-height: 72px;
+    --header-height: 68px;
   }
 
   .container {
-    padding: 0 18px;
+    padding: 0 16px;
+    max-width: 100%;
   }
 
+  /* Header */
   .luxury-header {
     height: var(--header-height);
   }
 
+  .brand-badge {
+    width: 32px;
+    height: 32px;
+  }
+
   .brand-name {
-    font-size: 1.25rem;
+    font-size: 1.18rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+  }
+
+  #nav-whatsapp-cta {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: rgba(212, 175, 55, 0.4);
   }
 
   #nav-whatsapp-cta span {
     display: none;
   }
 
-  #nav-whatsapp-cta {
-    padding: 8px 12px;
+  #nav-whatsapp-cta svg {
+    margin: 0;
+    width: 18px;
+    height: 18px;
   }
 
+  .mobile-menu-btn {
+    display: flex;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Hero Section: Tightly composed, eliminates vast empty scrolling */
   .hero-section {
-    padding-top: calc(var(--header-height) + 20px);
-    padding-bottom: 40px;
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 36px;
+  }
+
+  .hero-meta-badge {
+    padding: 6px 14px;
+    margin-bottom: 16px;
+  }
+
+  .meta-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
   }
 
   .hero-headline {
-    font-size: 2.3rem;
+    font-size: clamp(2rem, 8.5vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
   }
 
   .hero-subtitle {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    padding: 0 8px;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
+    margin-top: 10px;
   }
 
-  .btn-gold-solid,
-  .btn-ghost-gold {
+  .hero-cta-group .btn-gold-solid,
+  .hero-cta-group .btn-ghost-gold {
     width: 100%;
-    padding: 14px 20px;
+    max-width: 320px;
+    padding: 13px 20px;
     font-size: 0.86rem;
+    justify-content: center;
   }
 
+  .hero-scroll-cue {
+    margin-top: 24px;
+  }
+
+  /* Section Spacings */
   .section-about,
   .section-services,
   .section-approach,
@@ -2988,30 +3089,85 @@ ul {
   }
 
   .section-portfolio {
-    padding: 48px 0 26px 0;
+    padding: 48px 0 24px 0;
   }
 
   .section-packages {
-    padding: 26px 0 48px 0;
+    padding: 24px 0 48px 0;
   }
 
   .section-header-center {
-    margin-bottom: 28px;
+    margin: 0 auto 28px auto;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.4rem);
+    margin-bottom: 10px;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+
+  /* About Section */
+  .about-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .about-stats-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
+  .stat-card {
+    padding: 18px 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* Services Grid */
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  /* Approach Section */
+  .approach-steps-container {
+    gap: 18px;
+  }
+
+  .approach-card {
+    padding: 24px 20px;
+  }
+
+  /* Why Us Cards */
   .why-cards-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
+  }
+
+  .why-card {
+    padding: 24px 20px;
+  }
+
+  /* Portfolio Section */
+  .portfolio-filter-tabs {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .filter-tab {
+    padding: 7px 14px;
+    font-size: 0.76rem;
   }
 
   .portfolio-gallery-grid {
@@ -3020,20 +3176,124 @@ ul {
     margin-bottom: 28px;
   }
 
-  .form-group-row {
+  /* Films & Reels Showcase */
+  .films-showcase-box {
+    padding: 22px 14px 18px 14px;
+    border-radius: 14px;
+  }
+
+  .insta-reels-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .insta-account-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .insta-reels-slider-track {
+    gap: 14px;
+    padding: 6px 2px 12px 2px;
+  }
+
+  .insta-reel-card {
+    flex: 0 0 240px; /* Gives peek of next card */
+  }
+
+  /* Packages & Pricing */
+  .packages-comparison-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 100%;
   }
 
-  .contact-card-wrapper {
-    padding: 30px 20px;
-  }
-
-  .wedding-inquiry-form {
-    padding: 24px 18px;
+  .pricing-card {
+    border-radius: 16px;
   }
 
   .package-card-content {
-    padding: 24px 20px;
+    padding: 24px 18px;
+  }
+
+  .features-checklist {
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .feature-item {
+    font-size: 0.85rem;
+  }
+
+  /* Contact & Booking Section: SINGLE UNIFIED CARD (No nested box) */
+  .contact-card-wrapper {
+    padding: 24px 16px;
+    border-radius: 16px;
+    background: #121212;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+  }
+
+  .contact-header-block {
+    margin-bottom: 22px;
+  }
+
+  .contact-headline {
+    font-size: clamp(1.75rem, 6vw, 2.2rem);
+  }
+
+  .contact-interactive-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-methods-stack {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .contact-method-card {
+    padding: 14px 16px;
+  }
+
+  /* Seamless Form on Mobile (no nested card-in-card) */
+  .wedding-inquiry-form {
+    background: transparent;
+    border: none;
+    padding: 20px 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .form-group-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    font-size: 0.84rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevents auto-zoom */
+    padding: 12px 14px;
+    min-height: 48px;
+  }
+
+  /* Footer */
+  .luxury-footer {
+    padding: 45px 0 25px 0;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .footer-links-group {
@@ -3043,11 +3303,26 @@ ul {
 
   .footer-bottom-bar {
     flex-direction: column-reverse;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
   }
+}
 
-  .films-showcase-box {
-    padding: 26px 18px;
+/* Specific Small Phone Refinement (Max 480px) */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .insta-reel-card {
+    flex: 0 0 220px;
+  }
+
+  .contact-card-wrapper {
+    padding: 20px 12px;
+  }
+
+  .wedding-inquiry-form {
+    padding: 16px 0 0 0;
   }
 }
