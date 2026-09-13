@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // --- 6. WhatsApp Direct Booking & Form Integration (+91 9990722844) ---
+  // --- 6. WhatsApp Direct Booking & Form Integration (+91 80810 11827) ---
   const weddingInquiryForm = document.getElementById("weddingInquiryForm");
 
   if (weddingInquiryForm) {
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `💬 *Vision & Details:*\n"${clientMessage}"\n\n` +
         `Please let us know your team's availability and next steps. Thank you!`;
 
-      const whatsappURL = `https://wa.me/919990722844?text=${encodeURIComponent(formattedMessage)}`;
+      const whatsappURL = `https://wa.me/918081011827?text=${encodeURIComponent(formattedMessage)}`;
 
       // Open WhatsApp in new tab
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
         2. <strong>Delivery Timelines:</strong> Teasers delivered within 7-10 working days. Full wedding films and high-resolution digital galleries delivered within 4-8 weeks.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-        3. <strong>Travel & Logistics:</strong> Travel and accommodation for destination weddings outside Delhi NCR are covered by the client.
+        3. <strong>Travel & Logistics:</strong> Travel and accommodation for destination weddings outside Gorakhpur, Lucknow & Deoria are covered by the client.
       </p>
     `,
     copyright: `
