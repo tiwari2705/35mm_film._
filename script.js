@@ -39,18 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 2. Mobile Drawer Navigation (390px Viewport) ---
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const mobileDrawer = document.getElementById("mobileDrawer");
+  const mobileDrawerBackdrop = document.getElementById("mobileDrawerBackdrop");
   const drawerCloseBtn = document.getElementById("drawerCloseBtn");
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
   function openDrawer() {
-    mobileDrawer.classList.add("open");
-    mobileMenuBtn.setAttribute("aria-expanded", "true");
+    if (mobileDrawer) mobileDrawer.classList.add("open");
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.add("active");
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
 
   function closeDrawer() {
-    mobileDrawer.classList.remove("open");
-    mobileMenuBtn.setAttribute("aria-expanded", "false");
+    if (mobileDrawer) mobileDrawer.classList.remove("open");
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.remove("active");
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
@@ -60,8 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (drawerCloseBtn) {
     drawerCloseBtn.addEventListener("click", closeDrawer);
   }
+  if (mobileDrawerBackdrop) {
+    mobileDrawerBackdrop.addEventListener("click", closeDrawer);
+  }
   mobileNavLinks.forEach((link) => {
     link.addEventListener("click", closeDrawer);
+  });
+
+  // Close drawer on Escape key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileDrawer && mobileDrawer.classList.contains("open")) {
+      closeDrawer();
+    }
   });
 
   // --- 3. Portfolio Category Filtering ---
@@ -175,6 +188,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowLeft") showLightbox(currentImageIndex - 1);
     if (e.key === "ArrowRight") showLightbox(currentImageIndex + 1);
   });
+
+  // Touch Swipe gestures for Lightbox on mobile devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleLightboxSwipe();
+    }, { passive: true });
+  }
+
+  function handleLightboxSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swiped left: go to next photo
+      showLightbox(currentImageIndex + 1);
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      // Swiped right: go to previous photo
+      showLightbox(currentImageIndex - 1);
+    }
+  }
 
 
 

@@ -24,7 +24,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2026mobile">
 </head>
 
 <body class="film-dark-theme">
@@ -87,6 +87,9 @@
       </div>
     </div>
 
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true"></div>
+
     <!-- Mobile Drawer Menu -->
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="drawer-header">
@@ -109,7 +112,9 @@
       <div class="mobile-drawer-footer">
         <a href="https://wa.me/918081011827" class="btn-gold-solid full-width">Chat on WhatsApp</a>
         <p class="drawer-phone">+91 80810 11827</p>
-        <p class="drawer-location" style="color: var(--gold-champagne); font-size: 0.8rem; margin-top: 6px; letter-spacing: 0.5px;">Gorakhpur &bull; Lucknow &bull; Deoria</p>
+        <p class="drawer-location"
+          style="color: var(--gold-champagne); font-size: 0.8rem; margin-top: 6px; letter-spacing: 0.5px;">Gorakhpur
+          &bull; Lucknow &bull; Deoria</p>
       </div>
     </div>
   </header>
@@ -136,7 +141,8 @@
         </h1>
 
         <p class="hero-subtitle">
-          We capture the emotions, traditions, laughter and little moments that make your wedding uniquely yours across Gorakhpur, Lucknow, Deoria & beyond.
+          We capture the emotions, traditions, laughter and little moments that make your wedding uniquely yours across
+          Gorakhpur, Lucknow, Deoria & beyond.
         </p>
 
         <!-- Ornate Gold Filigree Divider -->
@@ -179,30 +185,54 @@
       </div>
     </section>
 
-    <!-- SECTION 3: ABOUT SECTION ("ABOUT 35mm_film._") -->
+    <!-- SECTION 3: ABOUT SECTION ("ABOUT THE OWNER & 35mm_film._") -->
     <section class="section-about" id="about">
       <div class="container">
+        <!-- Top Eyebrow Tag: "@abhi_mani_ owner" -->
         <div class="section-badge-wrapper">
-          <span class="section-eyebrow">ABOUT 35mm_film._</span>
+          <div class="owner-top-tag">
+            <span class="owner-status-dot"></span>
+            <span class="owner-handle">@abhi_mani_</span>
+            <span class="owner-separator">&bull;</span>
+            <span class="owner-role-title">OWNER</span>
+          </div>
+        </div>
+
+        <div class="section-header-center about-header">
+          <h2 class="section-title">Meet The Founder &amp; CEO</h2>
+          <p class="section-desc">The cinematographic vision, artful eye, and creative heart behind 35mm_film._</p>
+          <div class="filigree-divider mini" aria-hidden="true">
+            <span class="filigree-line"></span>
+            <span class="gold-diamond"></span>
+            <span class="filigree-line"></span>
+          </div>
         </div>
 
         <div class="about-editorial-grid">
-          <!-- Left: Couple Visual with Film Strip Accent -->
+          <!-- Left: Owner Portrait with Cinema Film Frame -->
           <div class="about-visual-column">
-            <div class="film-strip-frame">
+            <div class="film-strip-frame owner-film-frame">
               <div class="film-strip-header">
-                <span class="film-code">KODAK 5219 &bull; 35MM VISION3 &bull; FRAME 08</span>
+                <span class="film-code">35MM CINEMATOGRAPHY &bull; DIR. OF PHOTOGRAPHY</span>
                 <div class="film-perforations">
                   <span></span><span></span><span></span><span></span><span></span>
                 </div>
               </div>
 
-              <div class="about-image-wrapper">
-                <img src="assets/images/ARY00782.jpg.jpeg" alt="Authentic editorial bridal portrait in royal red lehenga bathed in natural sunlight beam"
-                  class="about-portrait-img">
-                <div class="about-image-badge">
-                  <span class="badge-year">EST. 2020</span>
-                  <span class="badge-title">TIMELESS STORYTELLING</span>
+              <div class="about-image-wrapper owner-image-wrapper">
+                <img src="assets/images/abhishek-mani.jpg"
+                  alt="Abhishek Mani (@abhi_mani_) - Owner, CEO & Lead Cinematographer at 35mm_film._ holding cinema camera rig on gimbal"
+                  class="about-portrait-img owner-portrait-img">
+
+                <!-- Floating Badges -->
+                <div class="owner-floating-badge-top">
+                  <span class="badge-icon">👑</span>
+                  <span class="badge-text">CEO &amp; FOUNDER</span>
+                </div>
+
+                <div class="about-image-badge owner-info-badge">
+                  <span class="badge-year">@abhi_mani_</span>
+                  <span class="badge-title">OWNER &bull; LEAD CINEMATOGRAPHER</span>
                 </div>
               </div>
 
@@ -210,16 +240,50 @@
                 <div class="film-perforations">
                   <span></span><span></span><span></span><span></span><span></span>
                 </div>
-                <span class="film-meta-right">ROYAL WEDDING ARCHIVES</span>
+                <span class="film-meta-right">35MM_FILM._ CREATIVE DIRECTOR ARCHIVE</span>
               </div>
+            </div>
+
+            <!-- Owner Quick Badges / Socials Below Visual -->
+            <div class="owner-meta-strip">
+              <div class="owner-meta-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="meta-pill-icon">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+                <span>Lead Cinematographer</span>
+              </div>
+              <div class="owner-meta-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="meta-pill-icon">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+                <span>Gorakhpur &bull; Lucknow &bull; Deoria</span>
+              </div>
+              <a href="https://www.instagram.com/35MM_film._/" target="_blank" rel="noopener noreferrer"
+                class="owner-meta-pill owner-insta-link" title="Follow on Instagram">
+                <svg class="meta-pill-icon icon-insta" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>@abhi_mani_</span>
+              </a>
             </div>
           </div>
 
           <!-- Right: Editorial Narrative Content -->
           <div class="about-content-column">
+            <!-- Owner Designation Roles Banner -->
+            <div class="owner-roles-banner">
+              <span class="owner-role-tag gold-tag">CEO &amp; Founder of 35mm</span>
+              <span class="owner-role-tag">Director of Cinematography</span>
+              <span class="owner-role-tag">Visual Storyteller</span>
+            </div>
+
             <h2 class="editorial-heading">
-              We Don’t Just Capture Moments.<br>
-              <span class="gold-italic-accent">We Capture Feelings.</span>
+              Every Frame Tells A Story.<br>
+              <span class="gold-italic-accent">I Make Sure Yours Feels Cinematic.</span>
             </h2>
 
             <div class="ornate-separator-left">
@@ -228,34 +292,100 @@
             </div>
 
             <p class="about-narrative-copy">
-              At <strong>35mm_film._</strong>, we believe every wedding has a story worth telling. From the excitement
-              of the first ceremony to the emotions of the vidaai, our team captures every genuine smile, tear, laugh
-              and celebration with a cinematic and timeless approach. Our goal is simple &mdash; to create photographs
-              and films that don’t just remind you of your wedding day, but make you feel it all over again.
+              At the helm of <strong>35mm_film._</strong> stands <strong>Abhishek Mani (@abhi_mani_)</strong> &mdash;
+              <strong>Owner, CEO, and Lead Cinematographer</strong>. Driven by an obsession with cinematic poetry and
+              genuine human emotion, Abhishek creates wedding films and photographs that look and feel like movies on
+              the silver screen.
             </p>
+            <p class="about-narrative-copy">
+              From operating stabilized cinema rigs on gimbal to orchestrating dramatic natural lighting, Abhishek
+              personally directs and crafts each wedding film. He blends the analog romance of 35mm film depth with
+              modern high-definition cinematography &mdash; preserving every sacred ritual, happy tear, and unscripted
+              laughter across Gorakhpur, Lucknow, Deoria, and luxury destinations across India.
+            </p>
+
+            <!-- Cinematography Craft Highlights -->
+            <div class="cinematography-craft-grid">
+              <div class="craft-mini-card">
+                <div class="craft-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="23 7 16 12 23 17 23 7" />
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="craft-title">Cinematography &amp; Motion</h4>
+                  <p class="craft-text">Fluid gimbal moves, anamorphic lenses, and cinema-grade pacing.</p>
+                </div>
+              </div>
+
+              <div class="craft-mini-card">
+                <div class="craft-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="craft-title">Signature 35mm Color Tone</h4>
+                  <p class="craft-text">Warm golden hues, velvety blacks, and timeless analog film depth.</p>
+                </div>
+              </div>
+
+              <div class="craft-mini-card">
+                <div class="craft-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="craft-title">Unscripted Emotion</h4>
+                  <p class="craft-text">No artificial poses &mdash; only authentic smiles, tears, and vows.</p>
+                </div>
+              </div>
+            </div>
 
             <!-- Metrics / Accolades Grid -->
             <div class="about-stats-grid">
               <div class="stat-card">
                 <span class="stat-number">250+</span>
-                <span class="stat-label">Weddings Documented</span>
+                <span class="stat-label">Royal Weddings Documented</span>
               </div>
               <div class="stat-card">
                 <span class="stat-number">15+</span>
-                <span class="stat-label">Royal Destinations</span>
+                <span class="stat-label">Heritage Destinations</span>
               </div>
               <div class="stat-card">
                 <span class="stat-number">100%</span>
-                <span class="stat-label">Raw Emotion & Soul</span>
+                <span class="stat-label">Cinematic Soul &amp; Heart</span>
               </div>
             </div>
 
+            <!-- Founder Quote Box -->
             <div class="about-quote-box">
               <p class="quote-text">
-                &ldquo;Photography is the pause button of life. We ensure your pause button is rendered in pure
-                gold.&rdquo;
+                &ldquo;Photography is the pause button of life, and Cinematography is its heartbeat. With 35mm_film._,
+                we ensure your wedding story is preserved in pure cinematic gold.&rdquo;
               </p>
-              <span class="quote-signature">&mdash; Creative Director, 35mm_film._</span>
+              <span class="quote-signature">&mdash; Abhishek Mani (@abhi_mani_), Owner &amp; CEO</span>
+            </div>
+
+            <!-- Direct Action CTAs -->
+            <div class="owner-cta-group">
+              <a href="https://wa.me/918081011827?text=Hello%20Abhishek%20Mani%2C%20I%20love%20the%20cinematography%20of%2035mm_film._%20and%20would%20like%20to%20discuss%20our%20wedding%20dates."
+                target="_blank" rel="noopener noreferrer" class="btn-gold-solid">
+                <span>Book Dates with Abhishek</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#films" class="btn-ghost-gold">
+                <span>Watch Wedding Films</span>
+              </a>
             </div>
           </div>
         </div>
@@ -552,13 +682,12 @@
         <!-- Portfolio Masonry Gallery -->
         <div class="portfolio-gallery-grid" id="portfolioGallery">
           <!-- Item 1: Royal Varmala -->
-          <div class="portfolio-item-card" data-category="weddings celebrations"
-            data-title="Royal Varmala Celebrations" data-location="Under The Floral Chandelier"
-            data-img="assets/images/ARY01035.jpg.jpeg">
+          <div class="portfolio-item-card" data-category="weddings celebrations" data-title="Royal Varmala Celebrations"
+            data-location="Under The Floral Chandelier" data-img="assets/images/ARY01035.jpg.jpeg">
             <div class="portfolio-card-inner">
               <img src="assets/images/ARY01035.jpg.jpeg"
-                alt="Authentic Varmala garland ceremony beneath illuminated floral chandelier and greenery arch" class="portfolio-thumb"
-                loading="lazy">
+                alt="Authentic Varmala garland ceremony beneath illuminated floral chandelier and greenery arch"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
                 <span class="portfolio-tag">WEDDING &bull; VARMALA</span>
                 <h4 class="portfolio-item-title">Royal Varmala Celebrations</h4>
@@ -577,16 +706,17 @@
 
           <!-- Item 2: Yasmin & Faiz Nikah Story -->
           <div class="portfolio-item-card" data-category="weddings celebrations"
-            data-title="Nikah Ceremony & Heirloom Vows" data-location="Yasmin & Faiz Wedding Story"
+            data-title="Nikah Ceremony &amp; Heirloom Vows" data-location="Groom Faiz &amp; Bride Yasmin"
             data-img="assets/images/IMG_0397.JPG.jpeg">
             <div class="portfolio-card-inner">
               <img src="assets/images/IMG_0397.JPG.jpeg"
-                alt="Yasmin and Faiz authentic Nikah ceremony story collage and marriage certificate signing" class="portfolio-thumb"
-                loading="lazy">
+                alt="Yasmin and Faiz authentic Nikah ceremony story collage and marriage certificate signing"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
-                <span class="portfolio-tag">NIKAH &bull; CEREMONY</span>
-                <h4 class="portfolio-item-title">Nikah Ceremony & Heirloom Vows</h4>
-                <p class="portfolio-item-meta">Royal stage seating, veil ceremony & marriage certificate signing</p>
+                <span class="portfolio-tag">NIKAH &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">Nikah Ceremony &amp; Heirloom Vows</h4>
+                <p class="portfolio-item-meta">Groom Faiz &amp; Bride Yasmin stage seating &amp; marriage certificate
+                  signing</p>
                 <div class="view-zoom-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8" />
@@ -601,16 +731,137 @@
 
           <!-- Item 3: Yasmin & Faiz Sacred Dua -->
           <div class="portfolio-item-card" data-category="weddings celebrations"
-            data-title="The Sacred Dua & Royal Entrance" data-location="Yasmin & Faiz Ceremony"
+            data-title="The Sacred Dua &amp; Royal Entrance" data-location="Groom Faiz &amp; Bride Yasmin"
             data-img="assets/images/IMG_0398.JPG.jpeg">
             <div class="portfolio-card-inner">
               <img src="assets/images/IMG_0398.JPG.jpeg"
-                alt="Groom in floral rose sehra offering heartfelt prayer alongside bride's royal entrance" class="portfolio-thumb"
-                loading="lazy">
+                alt="Groom Faiz in floral rose sehra offering heartfelt prayer alongside Bride Yasmin's royal entrance"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
-                <span class="portfolio-tag">ROYAL WEDDING &bull; DUA</span>
-                <h4 class="portfolio-item-title">The Sacred Dua & Royal Entrance</h4>
-                <p class="portfolio-item-meta">Heartfelt prayers in floral rose sehra & grand bridal procession</p>
+                <span class="portfolio-tag">ROYAL WEDDING &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">The Sacred Dua &amp; Royal Entrance</h4>
+                <p class="portfolio-item-meta">Groom Faiz in floral sehra &amp; Bride Yasmin grand procession</p>
+                <div class="view-zoom-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Faiz & Yasmin Gazebo Pavilion Romance -->
+          <div class="portfolio-item-card" data-category="pre-weddings celebrations"
+            data-title="Pavilion Romance &amp; Silent Vows" data-location="Groom Faiz &amp; Bride Yasmin"
+            data-img="assets/images/faiz-yasmin-1.jpg">
+            <div class="portfolio-card-inner">
+              <img src="assets/images/faiz-yasmin-1.jpg"
+                alt="Faiz &amp; Yasmin romantic pre-wedding portrait beneath carved stone gazebo pavilion"
+                class="portfolio-thumb" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-tag">PRE-WEDDING &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">Pavilion Romance &amp; Silent Vows</h4>
+                <p class="portfolio-item-meta">Groom Faiz &amp; Bride Yasmin under heritage carved sandstone dome</p>
+                <div class="view-zoom-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Faiz & Yasmin Heritage Grand Staircase -->
+          <div class="portfolio-item-card" data-category="pre-weddings celebrations"
+            data-title="Heritage Grand Staircase Embrace" data-location="Groom Faiz &amp; Bride Yasmin"
+            data-img="assets/images/faiz-yasmin-2.jpg">
+            <div class="portfolio-card-inner">
+              <img src="assets/images/faiz-yasmin-2.jpg"
+                alt="Faiz &amp; Yasmin pre-wedding couple shoot in elegant black attire on sandstone temple stairs"
+                class="portfolio-thumb" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-tag">PRE-WEDDING &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">Heritage Grand Staircase Embrace</h4>
+                <p class="portfolio-item-meta">Groom Faiz &amp; Bride Yasmin framed against temple dome architecture</p>
+                <div class="view-zoom-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Faiz & Yasmin Lakeside Serenade -->
+          <div class="portfolio-item-card" data-category="pre-weddings celebrations"
+            data-title="Lakeside Serenity &amp; Crimson Silk" data-location="Groom Faiz &amp; Bride Yasmin"
+            data-img="assets/images/faiz-yasmin-3.jpg">
+            <div class="portfolio-card-inner">
+              <img src="assets/images/faiz-yasmin-3.jpg"
+                alt="Bride Yasmin in crimson banarasi silk leaning on Groom Faiz by tranquil lake promenade"
+                class="portfolio-thumb" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-tag">PRE-WEDDING &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">Lakeside Serenity &amp; Crimson Silk</h4>
+                <p class="portfolio-item-meta">Groom Faiz &amp; Bride Yasmin in intimate sunset waterfront portrait</p>
+                <div class="view-zoom-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Faiz & Yasmin Woodland Romance -->
+          <div class="portfolio-item-card" data-category="pre-weddings weddings"
+            data-title="Woodland Royalty &amp; Officer's Pride" data-location="Groom Faiz &amp; Bride Yasmin"
+            data-img="assets/images/faiz-yasmin-4.jpg">
+            <div class="portfolio-card-inner">
+              <img src="assets/images/faiz-yasmin-4.jpg"
+                alt="Groom Faiz in military officer uniform standing with Bride Yasmin in grand mint ball gown in forest"
+                class="portfolio-thumb" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-tag">PRE-WEDDING &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">Woodland Royalty &amp; Officer's Pride</h4>
+                <p class="portfolio-item-meta">Groom Faiz in uniform with Bride Yasmin in couture mint gown in deep
+                  forest</p>
+                <div class="view-zoom-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Yasmin & Faiz Enchanted Forest Solo -->
+          <div class="portfolio-item-card" data-category="pre-weddings celebrations"
+            data-title="The Enchanted Forest Fairytale" data-location="Groom Faiz &amp; Bride Yasmin"
+            data-img="assets/images/faiz-yasmin-5.jpg">
+            <div class="portfolio-card-inner">
+              <img src="assets/images/faiz-yasmin-5.jpg"
+                alt="Bride Yasmin in flared mint green gown walking through tall forest path during pre-wedding shoot"
+                class="portfolio-thumb" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-tag">BRIDAL SOLO &bull; FAIZ &amp; YASMIN</span>
+                <h4 class="portfolio-item-title">The Enchanted Forest Fairytale</h4>
+                <p class="portfolio-item-meta">Bride Yasmin floating through towering sal woodland in couture gown</p>
                 <div class="view-zoom-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8" />
@@ -629,8 +880,8 @@
             data-img="assets/images/ARY00782.jpg.jpeg">
             <div class="portfolio-card-inner">
               <img src="assets/images/ARY00782.jpg.jpeg"
-                alt="Royal Indian bride in crimson lehenga with golden sunbeam and traditional kalire" class="portfolio-thumb"
-                loading="lazy">
+                alt="Royal Indian bride in crimson lehenga with golden sunbeam and traditional kalire"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
                 <span class="portfolio-tag">BRIDAL PORTRAIT &bull; EDITORIAL</span>
                 <h4 class="portfolio-item-title">The Royal Bride & Sunlight Beam</h4>
@@ -647,17 +898,17 @@
             </div>
           </div>
 
-          <!-- Item 5: Sambhavi Mehendi & Floral Haathphool -->
+          <!-- Item 10: Sambhavi Mehendi & Floral Haathphool -->
           <div class="portfolio-item-card" data-category="engagements celebrations pre-weddings"
-            data-title="Mehendi Rituals & Floral Haathphool" data-location="Sambhavi's Celebration"
-            data-img="assets/images/WhatsApp Image 2026-09-12 at 10.30.49 PM.jpeg">
+            data-title="Mehendi Rituals &amp; Floral Haathphool" data-location="Sambhavi's Celebration"
+            data-img="assets/images/mehendi-haathphool.jpeg">
             <div class="portfolio-card-inner">
-              <img src="assets/images/WhatsApp Image 2026-09-12 at 10.30.49 PM.jpeg"
-                alt="Bride Sambhavi adorned with handcrafted fresh floral haathphool jewelry and intricate henna" class="portfolio-thumb"
-                loading="lazy">
+              <img src="assets/images/mehendi-haathphool.jpeg"
+                alt="Bride Sambhavi adorned with handcrafted fresh floral haathphool jewelry and intricate henna"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
                 <span class="portfolio-tag">MEHENDI &bull; CELEBRATION</span>
-                <h4 class="portfolio-item-title">Mehendi Rituals & Floral Haathphool</h4>
+                <h4 class="portfolio-item-title">Mehendi Rituals &amp; Floral Haathphool</h4>
                 <p class="portfolio-item-meta">Delicate fresh pink floral jewellery and intricate bridal henna</p>
                 <div class="view-zoom-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -671,14 +922,14 @@
             </div>
           </div>
 
-          <!-- Item 6: Joyous Henna Celebration -->
+          <!-- Item 11: Joyous Henna Celebration -->
           <div class="portfolio-item-card" data-category="celebrations engagements"
             data-title="Joyous Henna Celebration" data-location="Mehendi Festivities"
-            data-img="assets/images/WhatsApp Image 2026-09-12 at 10.30.50 PM (1).jpeg">
+            data-img="assets/images/mehendi-joyous.jpeg">
             <div class="portfolio-card-inner">
-              <img src="assets/images/WhatsApp Image 2026-09-12 at 10.30.50 PM (1).jpeg"
-                alt="Bride Sambhavi smiling radiantly and displaying intricate bridal mehendi artwork" class="portfolio-thumb"
-                loading="lazy">
+              <img src="assets/images/mehendi-joyous.jpeg"
+                alt="Bride Sambhavi smiling radiantly and displaying intricate bridal mehendi artwork"
+                class="portfolio-thumb" loading="lazy">
               <div class="portfolio-overlay">
                 <span class="portfolio-tag">CANDID &bull; JOY</span>
                 <h4 class="portfolio-item-title">Joyous Henna Celebration</h4>
@@ -695,12 +946,12 @@
             </div>
           </div>
 
-          <!-- Item 7: Heirloom Henna Detailing -->
+          <!-- Item 12: Heirloom Henna Detailing -->
           <div class="portfolio-item-card" data-category="engagements celebrations pre-weddings"
             data-title="Heirloom Henna Detailing" data-location="Bridal Details Archive"
-            data-img="assets/images/WhatsApp Image 2026-09-12 at 10.30.50 PM.jpeg">
+            data-img="assets/images/mehendi-details.jpeg">
             <div class="portfolio-card-inner">
-              <img src="assets/images/WhatsApp Image 2026-09-12 at 10.30.50 PM.jpeg"
+              <img src="assets/images/mehendi-details.jpeg"
                 alt="Macro close-up detail shot of delicate handcrafted bridal henna patterns" class="portfolio-thumb"
                 loading="lazy">
               <div class="portfolio-overlay">
@@ -1285,7 +1536,7 @@
           <div class="footer-nav-col">
             <span class="col-heading">Navigation</span>
             <ul>
-              <li><a href="#about">About Studio</a></li>
+              <li><a href="#about">About &amp; Founder</a></li>
               <li><a href="#services">Core Services</a></li>
               <li><a href="#approach">Our Approach</a></li>
               <li><a href="#portfolio">Selected Portfolio</a></li>
@@ -1299,12 +1550,15 @@
             <ul>
               <li><a href="https://instagram.com/35MM_film._" target="_blank" rel="noopener noreferrer">Instagram
                   @35MM_film._</a></li>
+              <li><a href="https://instagram.com/35MM_film._" target="_blank" rel="noopener noreferrer">Founder
+                  @abhi_mani_</a></li>
               <li><a href="https://youtube.com/@35MM_film._" target="_blank" rel="noopener noreferrer">YouTube
                   @35MM_film._</a></li>
               <li><a href="https://wa.me/918081011827" target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
               </li>
               <li><a href="tel:+918081011827">+91 80810 11827</a></li>
-              <li style="color: var(--gold-champagne); font-size: 0.85rem; margin-top: 6px;">Gorakhpur &bull; Lucknow &bull; Deoria</li>
+              <li style="color: var(--gold-champagne); font-size: 0.85rem; margin-top: 6px;">Gorakhpur &bull; Lucknow
+                &bull; Deoria</li>
             </ul>
           </div>
 
@@ -1374,7 +1628,7 @@
   </div>
 
   <script src="reels-data.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=2026mobile"></script>
 </body>
 
 </html>
